@@ -1,0 +1,30 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+import tensorflow as tf
+from tensorflow import keras
+
+(X_train, y_train), (X_test, y_test) = keras.datasets.cifar10.load_data()
+X_train.shape, y_train.shape, X_test.shape, y_test.shape
+
+### 0~255 값을 0.0~1.0 으로 바꾼다
+X_train = X_train/255
+X_test = X_test/255
+
+### 원핫인코딩
+y_train = np.eye(10)[y_train.ravel()] # ravel() : 1차원형태로 바꾼다
+y_test = np.eye(10)[y_test.ravel()]
+
+X_train.shape, y_train.shape, X_test.shape, y_test.shape
+
+labels = ['airplane',
+ 'automobile',
+ 'bird',
+ 'cat',
+ 'deer',
+ 'dog',
+ 'frog',
+ 'horse',
+ 'ship',
+ 'truck']
+ 
