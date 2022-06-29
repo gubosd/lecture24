@@ -1,3 +1,7 @@
+이미지 다운로드
+https://drive.google.com/file/d/1c9PB3dAIhv0mDUE_3yLDg6w9gA7P75I0/view?usp=sharing
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
