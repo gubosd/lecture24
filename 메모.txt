@@ -29,10 +29,18 @@ labels = ['airplane',
  'truck']
  
 model = keras.models.Sequential()
-model.add(keras.layers.Conv2D(32, (3,3), padding='same', activation='relu', input_shape=(32,32,3)))
+model.add(keras.layers.Conv2D(32, (3,3), padding='same',
+                              input_shape=(32,32,3), activation='relu'))
 model.add(keras.layers.MaxPooling2D((2,2)))
+model.add(keras.layers.Conv2D(64, (3,3), padding='same', activation='relu'))
+model.add(keras.layers.MaxPooling2D((2,2)))
+model.add(keras.layers.Conv2D(128, (3,3), padding='same', activation='relu'))
+model.add(keras.layers.MaxPooling2D((2,2)))
+
 model.add(keras.layers.Flatten())
+model.add(keras.layers.Dense(128, activation='relu'))
 model.add(keras.layers.Dense(10, activation='softmax'))
+
 model.summary()
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['acc'])
